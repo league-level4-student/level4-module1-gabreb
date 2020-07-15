@@ -112,7 +112,7 @@ public class CustomArrayListTest {
 		list.add("a");
 		list.add("test");
 
-		assertTrue(list.size() == 5);
+	   assertTrue(list.size() == 5);
 		
 		ArrayList<Integer> list2 = new ArrayList<Integer>();
 		list2.add(0);
@@ -131,11 +131,11 @@ public class CustomArrayListTest {
 		list.add("a");
 		list.add("test");
 		
-		assertTrue(list.size() == 5);
+	   assertTrue(list.size() == 5);
 		
 		list.remove(0);
 		list.remove(0);
 		
-		assertTrue(list.size() == 3);
+	    assertTrue(list.size() == 3);
 	}
 }
