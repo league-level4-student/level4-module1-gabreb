@@ -87,11 +87,11 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		//   of the game. The smaller the number, the faster it goes.
 		switch (choice) {
 		case "Expert":
-			timer.setDelay(10);
+			timer.setDelay(125);
 		case "Moderate":
-			timer.setDelay(20);
+			timer.setDelay(250);
 		case "Beginner":
-			timer.setDelay(30);
+			timer.setDelay(500);
 		}
 		//3. start the timer
 		timer.start();
@@ -112,20 +112,25 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		//1. Use a switch statement on e.getKeyCode()
 		//   to determine which key was pressed.
 		switch (e.getKeyCode()) {
-		case 32:
+		case KeyEvent.VK_SPACE: 
 		snake.feed();
-		case 37:
+		break;
+		case KeyEvent.VK_LEFT:
 		//left arrow
 		snake.setDirection(Direction.LEFT);
-		case 38:
+		break;
+		case KeyEvent.VK_UP:
 		//up arrow
 		snake.setDirection(Direction.UP);
-		case 39:
+		break;
+		case KeyEvent.VK_RIGHT:
 		//right arrow
 		snake.setDirection(Direction.RIGHT);
-		case 40: 
+		break;
+		case KeyEvent.VK_DOWN: 
 		//down arrow
 		snake.setDirection(Direction.DOWN);
+		break;
 		}
 		// if an arrow key is pressed, set the snake's 
 		// direction accordingly
@@ -182,7 +187,7 @@ public class _00_SnakeGame implements ActionListener, KeyListener {
 		}
 		//3. if the location of the head is equal to the location of the food,
 		// 	 feed the snake and set the food location
-		if (snake.getHeadLocation() == foodLocation) {
+		if (snake.getHeadLocation().equals(foodLocation)) {
 			snake.feed();
 			setFoodLocation();
 		}
